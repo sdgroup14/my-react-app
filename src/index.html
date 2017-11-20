@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, maximum-scale=1.0">
+	<meta http-equiv="cleartype" content="on">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser.js"></script>
+	<!--<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>-->
+
+	<!-- build:remove -->
+	<link href="css/style.css" rel="stylesheet">
+	<!-- /build -->
+	<!-- build:include ../templates/css-link.html -->
+	<!-- /build -->
+
+	<title></title>
+</head>
+
+<body>
+	<div id="content"></div>
+
+	<script type="text/babel">
+		var HelloWorld = React.createClass({
+			render: function () {
+				return (<h1>HELLO ALL!</h1>);
+			}
+		});
+
+		ReactDOM.render(
+			<HelloWorld />,
+			document.getElementById('content')
+		);
+	</script>
+
+<!-- build:remove -->
+<!--<script src="js/events.js"></script>-->
+<!-- /build -->
+<!-- build:include ../templates/js-script.html -->
+<!-- /build -->
+
+<!--<script crossorigin src="https://unpkg.com/16.1.1/umd/react.production.min.js"></script>-->
+<!--<script crossorigin src="https://unpkg.com/16.1.1/umd/react-dom.production.min.js"></script>-->
+</body>
+</html>
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+	<!--<meta charset="UTF-8">-->
+	<!--<title>Hello World!</title>-->
+	<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.js"></script>-->
+	<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.js"></script>-->
+	<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser.js"></script>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div id='content'></div>-->
+
+<!--<script type="text/babel">-->
+
+	<!--ReactDOM.render(<h1>Hello World</h1> , document.getElementById('content'))-->
+
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->

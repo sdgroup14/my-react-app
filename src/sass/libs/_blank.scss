@@ -1,0 +1,40 @@
+@mixin font-face($fontName) {
+  font-family: $fontName;
+  src: url("../fonts/"+$fontName+"/"+$fontName+".eot");
+  src: url("../fonts/"+$fontName+"/"+$fontName+".eot") format('embedded-opentype'),
+  url("../fonts/"+$fontName+"/"+$fontName+".woff2") format('woff2'),
+  url("../fonts/"+$fontName+"/"+$fontName+".woff") format('woff'),
+  url("../fonts/"+$fontName+"/"+$fontName+".ttf") format('truetype'),
+  url("../fonts/"+$fontName+"/"+$fontName+".svg#"+$fontName) format('svg');
+}
+
+// %reg {font-family: "MyriadProRegular", sans-serif; font-weight: 400;}
+//%sb {font-family: "SFPDisplayBold"};
+//%sl {font-family: "SFPDisplayLight"};
+//%sm {font-family: "SFPDisplayMedium"};
+
+// %sprite {
+//   display: block;
+//   content: '';
+//   margin: 0 auto;
+//   background: url(../img/sprite-1.png);
+//   background-size: 380px 341px;
+//   background-repeat: no-repeat;
+// }
+
+// %sprite-2 {
+//   display: block;
+//   content: '';
+//   margin: 0 auto;
+//   background: url(../img/sprite-2.png);
+//   background-size: 312px 310px;
+//   background-repeat: no-repeat;
+// }
+
+
+
+
+
+
+
+
