@@ -24,14 +24,74 @@
 	<div id="content"></div>
 
 	<script type="text/babel">
-		var HelloWorld = React.createClass({
+
+		var CONTACTS = [
+			{
+				id: 1,
+				name: 'Dan',
+				phone: '1111'
+			},
+			{
+				id: 2,
+				name: 'Endy',
+				phone: '222'
+			},
+			{
+				id: 3,
+				name: 'Mike',
+				phone: '333'
+			},
+
+		];
+
+		var SingleContact = React.createClass({
 			render: function () {
-				return (<h1>HELLO ALL!</h1>);
+				return (
+					<li className="cont-item">
+						<div>{this.props.name}</div>
+						<div>{this.props.phone}</div>
+					</li>
+			);
+			}
+		});
+
+		var ContactsList = React.createClass({
+			getInitialState: function () {
+				return {
+					displayedContacts: CONTACTS
+				};
+			},
+			handlerSearch: function (event) {
+				var query = event.target.value.toLowerCase();
+				var displayedContacts = CONTACTS.filter(function (el) {
+					var searchValue = el.name.toLowerCase();
+					return searchValue.indexOf(query) !== -1;
+				});
+				this.setState({displayedContacts: displayedContacts});
+				console.log(displayedContacts);
+			},
+			render: function () {
+				return (
+				<div>
+					<input type="text" className="inp" onChange={this.handlerSearch}/>
+					<ul>
+						{
+							this.state.displayedContacts.map(function (el) {
+								return <SingleContact
+										key={el.id}
+										name={el.name}
+										phone={el.phone}
+								/>;
+							})
+						}
+					</ul>
+				</div>
+			);
 			}
 		});
 
 		ReactDOM.render(
-			<HelloWorld />,
+				<ContactsList/>,
 			document.getElementById('content')
 		);
 	</script>
@@ -46,23 +106,3 @@
 <!--<script crossorigin src="https://unpkg.com/16.1.1/umd/react-dom.production.min.js"></script>-->
 </body>
 </html>
-
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-	<!--<meta charset="UTF-8">-->
-	<!--<title>Hello World!</title>-->
-	<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.js"></script>-->
-	<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.js"></script>-->
-	<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser.js"></script>-->
-<!--</head>-->
-<!--<body>-->
-<!--<div id='content'></div>-->
-
-<!--<script type="text/babel">-->
-
-	<!--ReactDOM.render(<h1>Hello World</h1> , document.getElementById('content'))-->
-
-<!--</script>-->
-<!--</body>-->
-<!--</html>-->
